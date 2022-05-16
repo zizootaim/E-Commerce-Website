@@ -1,0 +1,114 @@
+.shop {
+  width: 98%;
+  margin: 6rem auto;
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  gap: 1rem;
+  font-family: "Inconsolata", monospace;
+}
+.shop__form {
+  padding: 0.5rem 0.8rem;
+}
+.search__field {
+  display: flex;
+  border: 0.1px solid rgba(0, 0, 0, 0.2);
+}
+.search__field .icon {
+  flex-basis: 10%;
+  display: grid;
+  place-items: center;
+  padding: 0 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: var(--main-color);
+  transition: 0.3s;
+  cursor: pointer;
+}
+.search__field .icon:hover {
+  background-color: var(--black);
+  color: #fff;
+}
+.search__field input {
+  flex-basis: 90%;
+  border: none;
+  outline: none;
+  padding: 0.7rem;
+  font-size: 1rem;
+}
+.search__field input::placeholder {
+  font-family: "Inconsolata", monospace;
+  font-size: 0.9rem;
+}
+.categories__field-select {
+  box-shadow: 1px 0 5px 0px rgba(0, 0, 0, 0.2);
+  padding: 0 0.1rem;
+}
+.categories__field select {
+  font-family: "Inconsolata", monospace;
+  letter-spacing: 0.05rem;
+  font-size: 1.1rem;
+  width: 100%;
+  text-transform: capitalize;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  color: var(--main-color);
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+option {
+  color: black;
+}
+.form__title {
+  margin: 1rem 0;
+}
+.price__field .ranges {
+  margin-bottom: 0.6rem;
+  color: rgba(0, 0, 0, 0.6);
+  letter-spacing: 0.05rem;
+}
+
+.discount {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+.discount span {
+  margin-left: 0.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.09rem;
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 600;
+}
+
+.rate {
+  cursor: pointer;
+}
+
+.shop__products .products__container {
+  width: 100%;
+  margin-top: 0;
+}
+
+.sketlon{
+  padding-top: .4rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.sketlon div{
+  margin: .5rem;
+}
+.error{
+  width: 100%;
+  margin-top: 4rem;
+  text-align: center;
+  color: red;
+}
+
+@media screen and (max-width: 1023px) {
+  .shop {
+    width: 95%;
+    grid-template-columns: 1fr;
+  }
+}

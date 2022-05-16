@@ -1,0 +1,154 @@
+.products__container {
+  width: 85%;
+  margin: 2rem auto;
+  font-family: "Inconsolata", monospace;
+}
+.products-title {
+  font-size: 2.1rem;
+  color: #353434;
+  margin-bottom: 2rem;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  place-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.product {
+  position: relative;
+  padding-bottom: 0.6rem;
+  box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  cursor: pointer;
+  max-width: 360px;
+  transition: 0.3s;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.product__img-wrapper {
+  border-radius: 1rem 1rem 0 0;
+  height: 11rem;
+}
+.product:hover {
+  transform: scale(1.05);
+}
+.product__content {
+  padding: 1rem;
+}
+.product__content > p {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+  width: 100%;
+  text-transform: capitalize;
+  letter-spacing: 0.07rem;
+}
+.product__price {
+  color: var(--main-color);
+}
+
+.product__price.discount span {
+  margin-left: 0;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  text-decoration: line-through;
+}
+.rate {
+  margin: 1rem 0;
+}
+.rate i {
+  color: #c30500;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+.add-to__cart {
+  font-size: 1.5rem;
+  color: #c30500;
+  background: none;
+  cursor: pointer;
+  transform: scale(0.8);
+  transition: 0.3s;
+}
+.add-to__cart:hover {
+  color: var(--main-color);
+  transform: scale(1);
+}
+.quick-btn {
+  position: absolute;
+  top: -8rem;
+  left: 20%;
+  right: 20%;
+  background-color: #353434;
+  color: #fff;
+  padding: 0.4rem 1.2rem;
+  border-radius: 0.5rem;
+  transition: 0.6s;
+}
+.product:hover .quick-btn {
+  top: 40%;
+}
+
+/* Single Product */
+
+.single-product__wrapper {
+  margin-top: 6rem;
+  padding: 2rem;
+}
+.single-product {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin: auto;
+  justify-content: center;
+}
+.single-product .product__img-wrapper {
+  padding: 0 0.8rem;
+}
+.single-product .product__content h4 {
+  margin: 0.7rem 0;
+  font-size: 1.2rem;
+}
+.single-product .rate {
+  cursor: unset;
+}
+
+/* Carousel */
+
+.carousel {
+  width: 90%;
+  margin: 2rem auto;
+  padding-bottom: 1rem;
+}
+
+.carousel .product {
+  max-width: 100%;
+  box-shadow: none;
+  border: 0.1px solid rgb(223, 215, 215);
+  border-radius: 1rem;
+}
+.carousel .product__img-wrapper {
+  border-radius: 0;
+}
+.carousel .product .quick-btn {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+@media screen and (max-width: 766px) {
+  .products-title {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .products__container {
+    width: 95%;
+  }
+  .product:hover .quick-btn {
+    top: 40%;
+  }
+  .single-product__wrapper {
+    padding: 0;
+  }
+}

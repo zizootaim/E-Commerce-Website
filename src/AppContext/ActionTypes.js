@@ -1,0 +1,11 @@
+export const FETCH_REQUEST = "FETCH_REQUEST";
+export const FETCH_SUCCESS = "FETCH_SUCCESS";
+export const FETCH_FAILURE = "FETCH_FAILURE";
+export const FETCH_CAT = "FETCH_CAT";
+export const SET_PRODUCTS = "SET_PRODUCTS";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const REMOVE_FROM_CART = "REMOVE_FROM_CART";
+export const CHANGE_AMOUNT = "CHANGE_AMOUNT";
+export const CHECKING_OUT = "CHECKING_OUT";
+export const CLEAR_CART = "CLEAR_CART";
+export const FILTER__PRODUCTS = "FILTER__PRODUCTS";
