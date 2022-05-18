@@ -143,21 +143,29 @@ nav {
   width: 100%;
   margin-top: 0.6rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   background-color: #fff;
   box-shadow: 1px 1px 3px rgb(0 0 0 / 20%);
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
+}
+.cart__item-bottom{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: .5rem;
 }
 .cart__item-title,
 .cart__item-price {
   font-size: 0.9rem;
   letter-spacing: 0.05rem;
 }
+.cart__item-title{
+  text-align: center;
+}
 .cart__item-amount {
   width: 3rem;
-  margin: 0 1.3rem;
+  margin-right: 1.3rem;
   border: 1px solid #eee;
   box-shadow: 0px 0px 2px 0.1px #9a9a9a;
 }
@@ -246,6 +254,8 @@ nav {
     position: unset;
     width: 100%;
     box-shadow: none;
+    max-height: 250px;
+    overflow-y: auto;
   }
   .dropdown-menu > li {
     text-align: left;

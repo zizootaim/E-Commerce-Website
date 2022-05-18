@@ -15,7 +15,7 @@ const Shop = () => {
     setFilterObj,
   } = useContextGlobally();
   useEffect(() => {
-    window.scrollTo({top:'0px',behavior:'smooth'})
+    window.scrollTo({top:0})
   },[])
 
   useEffect(() => {

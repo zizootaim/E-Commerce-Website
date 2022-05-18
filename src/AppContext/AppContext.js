@@ -1,4 +1,5 @@
 import React, { useEffect, useReducer, useState } from "react";
+import millify from "millify";
 import reducer from "./reducer";
 import * as actionTypes from "../AppContext/ActionTypes";
 
@@ -45,13 +46,14 @@ export const AppProvider = ({ children }) => {
 
   // Cart Functions
   const addToCart = (p) => {
+    
     let existed = false;
     state.cartProducts.forEach((pro) => {
       if (pro.id == p.id) existed = true;
     });
     if (!existed) {
       p.count = 1;
-      p.total = p.price;
+      p.total = p.discountPercentage ? p.new__price : p.price;
       dispatch({ type: ADD_TO_CART, payload: p });
     } else return;
   };

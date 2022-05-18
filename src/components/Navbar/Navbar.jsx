@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { useContextGlobally } from "../../AppContext/AppContext";
+import millify from "millify";
 
 const Navbar = () => {
   const { state, removeFromCart, changeAmount } = useContextGlobally();
@@ -18,8 +19,7 @@ const Navbar = () => {
     e.preventDefault();
     const target = e.target.parentElement.querySelector(".dropdown-menu");
     target.classList.toggle("active");
-    e.target.parentElement.classList.toggle('active')
-  
+    e.target.parentElement.classList.toggle("active");
   };
   const showNavMenu = () => {
     const target = document.querySelector(".nav__list");
@@ -38,7 +38,7 @@ const Navbar = () => {
     Array.from(document.querySelectorAll(".nav__list li")).forEach((li) => {
       li.classList.remove("active");
     });
-    if(e.target.localName == 'a') e.target = e.target.parentElement;
+    if (e.target.localName == "a") e.target = e.target.parentElement;
     e.target.classList.add("active");
   };
 
@@ -107,29 +107,30 @@ const Navbar = () => {
                 {state.cartProducts.map((p, index) => (
                   <li className="cart__item" key={index}>
                     <p className="cart__item-title">
-                      {p.title.length > 10
-                        ? `${p.title.slice(0, 10)}...`
-                        : p.title}
+                      {p.title}
                     </p>
-                    <div className="cart__item-amount">
-                      <input
-                        type="number"
-                        defaultValue={p.count}
-                        min={1}
-                        onChange={(e) => changeAmount(e.target.value, p.id)}
-                      />
+                    <div className="cart__item-bottom">
+                      <div className="cart__item-amount">
+                        <input
+                          type="number"
+                          defaultValue={p.count}
+                          min={1}
+                          max={p.stock}
+                          onChange={(e) => changeAmount(e.target.value, p.id)}
+                        />
+                      </div>
+                      <p className="cart__item-price">${p.total}</p>
+                      <i
+                        className="fas fa-trash remove-btn"
+                        onClick={() => removeFromCart(p.id)}
+                      ></i>
                     </div>
-                    <p className="cart__item-price">${p.total}</p>
-                    <i
-                      className="fas fa-trash remove-btn"
-                      onClick={() => removeFromCart(p.id)}
-                    ></i>
                   </li>
                 ))}
               </ul>
               <div className="cart__bottom">
                 <h3>
-                  Total : <span>${getTotal(state.cartProducts)}</span>
+                  Total : <span>${millify(getTotal(state.cartProducts))}</span>
                 </h3>
                 <button className="btn check-btn">check out</button>
               </div>

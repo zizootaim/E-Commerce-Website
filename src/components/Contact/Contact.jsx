@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import "./Contact.css";
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
     <section className="contact">
       <div className="contact__title">
@@ -34,16 +37,24 @@ const Contact = () => {
       </div>
       <div className="contact__form">
         <div>
-          <TextField label="Name" fullWidth color="warning" id="fullWidth"  />
-          <TextField label="Email" style={{ margin: "1rem 0" }} color="warning" />
+          <TextField label="Name" fullWidth color="warning" id="fullWidth" />
           <TextField
-          id="outlined-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-          color="warning"
-        />
-          <TextField label="Subject" style={{ margin: "1rem 0" }} color="warning" />
+            label="Email"
+            style={{ margin: "1rem 0" }}
+            color="warning"
+          />
+          <TextField
+            id="outlined-password-input"
+            label="Password"
+            type="password"
+            autoComplete="current-password"
+            color="warning"
+          />
+          <TextField
+            label="Subject"
+            style={{ margin: "1rem 0" }}
+            color="warning"
+          />
         </div>
         <div>
           <textarea cols="30" rows="10" placeholder="Your message"></textarea>

@@ -1,63 +1,67 @@
-import React from "react";
+import React, { useEffect } from "react";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./About.css";
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0 });
+  }, []);
   return (
     <section className="about" style={{ marginTop: "6rem" }} id="about">
       <div className="testimonials">
-          
-      <h1 className="title">Our <span>Customers</span> Opinions</h1>
+        <h1 className="title">
+          Our <span>Customers</span> Opinions
+        </h1>
         <div>
-        <OwlCarousel
-          items={4}
-          className="owl-theme"
-          responsiveClass={true}
-          responsive={{
-            0:{
+          <OwlCarousel
+            items={4}
+            className="owl-theme"
+            responsiveClass={true}
+            responsive={{
+              0: {
                 items: 1,
                 nav: true,
                 loop: false,
-              }
-          }}
-          margin={16}
-        >
-          <div className="testimonial">
-            <h3>
-              Gretchen <span>Customer</span>
-            </h3>
-            <p className="from">United States</p>
-            <p>
-              Maecenas interdum, metus vitae tincidunt porttitor, magna quam
-              egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget
-              gravida odio. Donec ullamcorper est eu accumsan cursus.
-            </p>
-          </div>
-          <div className="testimonial">
-            <h3>
-              Esmeralda <span>Customer</span>
-            </h3>
-            <p className="from">United States</p>
-            <p>
-              Maecenas interdum, metus vitae tincidunt porttitor, magna quam
-              egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget
-              gravida odio. Donec ullamcorper est eu accumsan cursus.
-            </p>
-          </div>
-          <div className="testimonial">
-            <h3>
-              Gretchen <span>Customer</span>
-            </h3>
-            <p className="from">United States</p>
-            <p>
-              Maecenas interdum, metus vitae tincidunt porttitor, magna quam
-              egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget
-              gravida odio. Donec ullamcorper est eu accumsan cursus.
-            </p>
-          </div>
-        </OwlCarousel>
+              },
+            }}
+            margin={16}
+          >
+            <div className="testimonial">
+              <h3>
+                Gretchen <span>Customer</span>
+              </h3>
+              <p className="from">United States</p>
+              <p>
+                Maecenas interdum, metus vitae tincidunt porttitor, magna quam
+                egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget
+                gravida odio. Donec ullamcorper est eu accumsan cursus.
+              </p>
+            </div>
+            <div className="testimonial">
+              <h3>
+                Esmeralda <span>Customer</span>
+              </h3>
+              <p className="from">United States</p>
+              <p>
+                Maecenas interdum, metus vitae tincidunt porttitor, magna quam
+                egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget
+                gravida odio. Donec ullamcorper est eu accumsan cursus.
+              </p>
+            </div>
+            <div className="testimonial">
+              <h3>
+                Gretchen <span>Customer</span>
+              </h3>
+              <p className="from">United States</p>
+              <p>
+                Maecenas interdum, metus vitae tincidunt porttitor, magna quam
+                egestas sem, ac scelerisque nisl nibh vel lacus. Proin eget
+                gravida odio. Donec ullamcorper est eu accumsan cursus.
+              </p>
+            </div>
+          </OwlCarousel>
         </div>
       </div>
       <div className="about-row">

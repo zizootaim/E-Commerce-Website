@@ -56,7 +56,7 @@ const Home = () => {
             <div>
               <h1 className="slide__title">Glasses Store</h1>
               <p>Want to Look Your Best?</p>
-              <button className="btn slide-btn">shop now</button>
+              <button className="btn slide-btn" onClick={() => navigate('shop')}>shop now</button>
             </div>
           </div>
 

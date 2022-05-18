@@ -19,7 +19,7 @@ const reducer = (state, action) => {
     case FETCH_REQUEST:
       return { ...state, loading: true };
     case FETCH_SUCCESS:
-      action.payload.forEach((p) => {
+      action.payload.forEach((p, index) => {
         const num = p.rating;
 
         const h =
@@ -29,7 +29,14 @@ const reducer = (state, action) => {
             ? 0.5
             : 0;
         p.rating = Math.floor(num) + h;
+        if(index == 0) p.discountPercentage = undefined;
+        if(p.discountPercentage != undefined){
+          const old = p.price,
+          reduction = old * p.discountPercentage / 100;
+          p.new__price = old - reduction;
+        }
       });
+
       return {
         ...state,
         loading: false,
@@ -67,7 +74,7 @@ const reducer = (state, action) => {
       const newCartPro = state.cartProducts.map((pro) => {
         if (pro.id == action.payload.id) {
           pro.count = action.payload.q;
-          pro.total = pro.count * pro.price;
+          pro.total = pro.count * (pro.discountPercentage ? pro.new__price : pro.price);
         }
         return pro;
       });

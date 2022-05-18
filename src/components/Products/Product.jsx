@@ -6,9 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const Product = ({ p }) => {
   const navigate = useNavigate();
-  const { addToCart,createStars } = useContextGlobally();
-  
- 
+  const { addToCart, createStars } = useContextGlobally();
 
   return (
     <div className="product">
@@ -22,10 +20,8 @@ const Product = ({ p }) => {
             p.discountPercentage ? "product__price discount" : "product__price"
           }
         >
-          <span>${p.price}</span> $
-          {p.discountPercentage
-            ? millify(p.price - (p.discountPercentage * p.price) / 100)
-            : p.price}
+          <span>${millify(p.price)}</span>
+          {p.discountPercentage ? millify(p.new__price) : ''}
         </p>
         <div className="rate">
           {createStars(p.rating).map((s, index) => (
@@ -41,15 +37,18 @@ const Product = ({ p }) => {
         >
           <i className="fas fa-cart-plus"></i>
         </button>
-        <button className="btn quick-btn" onClick={() => {
-          console.log(window.location.pathname);
-          if(window.location.pathname == '/shop'){
-            
-            navigate(`SingleProduct/${p.id}`)
-          }else{
-            navigate(`shop/SingleProduct/${p.id}`)
-          }
-        }}>Quik View</button>
+        <button
+          className="btn quick-btn"
+          onClick={() => {
+            if (window.location.pathname == "/shop") {
+              navigate(`SingleProduct/${p.id}`);
+            } else {
+              navigate(`shop/SingleProduct/${p.id}`);
+            }
+          }}
+        >
+          Quik View
+        </button>
       </div>
     </div>
   );
